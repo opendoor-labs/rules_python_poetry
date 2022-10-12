@@ -67,7 +67,7 @@ def _poetry_install_toolchain_impl(repository_ctx):
         fail("failed to install Poetry:\n%s\n%s" % (result.stdout, result.stderr))
 
     for plugin in repository_ctx.attr.plugins:
-        result = repository_ctx.execute(["bin/poetry", "plugin", "add", plugin])
+        result = repository_ctx.execute(["bin/poetry", "self", "add", plugin])
         if result.return_code != 0:
             fail("failed to install Poetry plugin %s:\n%s\n%s" % (plugin, result.stdout, result.stderr))
 
