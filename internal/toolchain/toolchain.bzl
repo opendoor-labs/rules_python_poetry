@@ -45,18 +45,12 @@ def _poetry_install_toolchain_impl(repository_ctx):
         _legacy_install(repository_ctx)
         return
 
-    repository_ctx.download(
-        url = "https://raw.githubusercontent.com/python-poetry/poetry/34ca1657cbd2834d98e3bb99ed76fd2df2e6b3b2/install-poetry.py",
-        sha256 = "e8c7f91d5bbf4d0795919cd062eafbb350bec0c7579cb61d05c2112f224935a2",
-        output = "install-poetry.py",
-    )
-
     # Absolute path to the repository directory.
     repository_dir = str(repository_ctx.path("."))
 
     arguments = [
         "python",
-        "install-poetry.py",
+        "./install-poetry.py",
         "--preview",  # Enable preview versions
         "--version", version,
     ]
