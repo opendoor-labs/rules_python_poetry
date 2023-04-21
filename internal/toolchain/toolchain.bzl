@@ -47,7 +47,7 @@ def _poetry_install_toolchain_impl(repository_ctx):
 
     repository_ctx.download(
         url = "https://github.com/python-poetry/poetry/blob/735235a08fce654f924b1c50cd9a613abd6aab62/install-poetry.py",
-        sha256 = "2fbabbc16c39170578d6421e07759048e4b9b521",
+        sha256 = "4d2db9fdbccf7d662f6c886cc03bc05371b8becbde19ac30a75c79ec6579262f",
         output = "install-poetry.py",
     )
 
